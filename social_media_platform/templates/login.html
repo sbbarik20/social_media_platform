@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <script src="https://kit.fontawesome.com/d9c78b6614.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/login_css.css' %}">
+</head>
+
+<body>
+    <form action="" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <i class="fas fa-user-circle"></i>
+        <h1>Login</h1>
+        <div>
+            <i class="fas fa-user"></i>
+            <input type="text" class="input-field" placeholder="Username"name="email">
+        </div>
+        <div>
+            <i class="fas fa-eye"></i>
+            <input type="password" class="input-field" placeholder="Password"name="pass1">
+        </div>
+        <div>
+            <div class="checkbox-container">
+                <input type="checkbox" class="checkbox" id="remember-me">
+                <label for="remember-me">Remember Me</label>
+            </div>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+        </div>
+        <button class="login-button"type="submit">LOGIN</button>
+        <button class="login-button" type="button" onclick="window.location.href='{% url 'signup' %}'">SIGN UP</button>
+    </div>
+</form>
+</body>
+
+</html>
