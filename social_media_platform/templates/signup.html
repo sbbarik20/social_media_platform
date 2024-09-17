@@ -5,57 +5,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
+    <title>Sign-up Page</title>
     <script src="https://kit.fontawesome.com/d9c78b6614.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{% static 'css/signup_css.css' %}">
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
 </head>
-
 <body>
-<form action="" method="post">
-    {% csrf_token %}
-    <div class="container" >
-        <i class="fas fa-user"></i>
-        <h1>Sign-up</h1>
-        <div>
+    <form action="{% url 'signup' %}" method="post">
+        {% csrf_token %}
+        <div class="container">
+            <i class="fas fa-user"></i>
+            <h1>Sign-up <br> <span>to create an account</span></h1>
+            
             <div>
-                <i class="fas fa-user"></i>
-                <input type="text" class="input-field" placeholder="First-Name" name="fname">
+                <div>
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="fname" class="input-field" placeholder="First-Name">
+                </div>
+                <div>
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="lname" class="input-field" placeholder="Last-Name">
+                </div>
             </div>
             <div>
-                <i class="fas fa-user"></i>
-                <input type="text" class="input-field" placeholder="Last-Name" name="lname">
+                <div>
+                    <i class="fas fa-user-circle"></i>
+                    <input type="text" name="uname" class="input-field" placeholder="User-Name">
+                </div>
+                <div>
+                    <i class="fas fa-phone"></i>
+                    <input type="text" name="mnub" class="input-field" placeholder="Mobile Number">
+                </div>
             </div>
+            <div>
+                <div>
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" name="email" class="input-field" placeholder="email-id">
+                </div>
+                <div>
+                    <i class="fas fa-eye-slash" id="see" onclick="myFunction()"></i>
+                    <input type="password" name="pass1" id="pass" class="input-field" placeholder="Password">
+                </div>
+            </div>
+            <div>      
+                <div class="checkbox-container">
+                    <input type="checkbox" class="checkbox" id="remember-me">
+                    <label for="remember-me">Save Password</label>
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="login-button">Sign-Up</button>
+            <button type="button" class="login-button" onclick="window.location.href='{% url 'login' %}'">Cancel</button>
         </div>
-        <div>
-            <div>
-                <i class="fas fa-phone"></i>
-                <input type="text" class="input-field" placeholder="Mobile Number" name="mnub">
-            </div>
-            <div>
-                <i class="fas fa-envelope"></i>
-                <input type="text" class="input-field" placeholder="email" name="email">
-            </div>
-        </div>
-        <div>
-            <div>
-                <i class="fas fa-eye"></i>
-                <input type="password" class="input-field" placeholder="Password" name="pass1">
-            </div>
-            <div>
-                <i class="fas fa-eye"></i>
-                <input type="text" class="input-field" placeholder="Confirm Password" name="pass2">
-            </div>
-        </div>
-        <div>
-            <div class="checkbox-container">
-                <input type="checkbox" class="checkbox" id="remember-me">
-                <label for="remember-me">Remember Me</label>
-            </div>
-            <a href="#" class="forgot-password">Forgot Password?</a>
-        </div>
-        <button class="login-button" type="submit">Sign-Up</button>
-        <button class="login-button" type="button" onclick="window.location.href='{% url 'login' %}'">LOGIN</button>
-    </div>
-</form>
+    </form>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("pass");
+            let icon = document.getElementById("see");
+            if (x.type === "password") {
+                x.type = "text";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            } else {
+                x.type = "password";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            }
+        }
+    </script>
 </body>
 </html>

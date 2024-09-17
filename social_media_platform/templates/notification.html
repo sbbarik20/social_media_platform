@@ -1,0 +1,89 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/d9c78b6614.js" crossorigin="anonymous"></script>
+    <title>Instagram Clone</title>
+    <style>
+        iframe{
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- Our Header section Starts from here -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-links">
+                    <ul class="nav-group">
+                        <li class="nav-item">
+                            <a href="{% url 'index' %}">
+                                <i class="fas fa-home bell"></i>
+                            </a>
+                        </li>
+                        <!--
+                        <li class="nav-item">
+                            <a href="">
+                                <i class="fas fa-video video"></i>
+                            </a>
+                        </li>
+                        -->
+                        <li class="nav-item">
+                            <div class="sta">
+                                <a href="{% url 'msg' %}">
+                                    <i class="fab fa-facebook-messenger msg"></i>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="action">
+                                <div class="profile" onclick="menuToggle()">
+                                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220609093221/g2-200x200.jpg"
+                                        alt="user Avatar">
+                                </div>
+                            </div>
+                        </li>
+                        <!--
+                        <li class="nav-item">
+                            <a href="">
+                                <i class="fas fa-heart heart"></i>
+                            </a>
+                        </li>
+                        -->
+                        <li class="nav-item">
+                            <div class="sta">
+                                <a href="{% url 'notification' %}">
+                                    <i class="fas fa-bell bell" style="background-color: rgb(21, 24, 204); color: white; padding: .5rem; border-radius: .5rem;"></i>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="">
+                                <i class="fas fa-gear gear"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Code for Showing the Status -->
+    <main style="height: 80vh;">
+        <iframe src="{% url 'bell' %}" frameborder="0" height="100%" width="90%" ></iframe>
+    </main>
+
+</body>
+
+</html>

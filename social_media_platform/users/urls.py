@@ -1,11 +1,16 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.user_signup, name='signup'),
-    path('login/', views.user_login, name='login'),
+    path('', views.user_login, name='login'),
+    path('signup/', views.user_signup, name='signup'),
+    path('social-auth/', include('social_django.urls', namespace='social')),
+    path('forgot_password/', views.user_forgot_password, name='forgot_password'),
     path('index/', views.user_index, name='index'),
     path('profile/', views.user_profile, name='profile'),
+    path('msg/', views.user__msg, name='msg'),
+    path('notification/', views.user__notification, name='notification'),
+    
 
 
     

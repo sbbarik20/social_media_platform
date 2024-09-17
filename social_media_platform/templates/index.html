@@ -17,51 +17,53 @@
     <header>
         <nav class="navbar">
             <div class="container">
-                <div class="logo">
-                    <a href="#">
-                        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220609090809/download-200x200.png"
-                            alt="img1" height="30px">
-                    </a>
-                </div>
-                <div class="searchbar">
-                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220609093658/search-200x200.png"
-                    height="18" alt="img2">
-                    <input type="text" placeholder="Search">
-                </div>
                 <div class="nav-links">
                     <ul class="nav-group">
                         <li class="nav-item">
+                            <a href="{% url 'index' %}">
+                                <i class="fas fa-home" style="background-color: rgb(21, 24, 204); color: white; padding: .5rem; border-radius: .5rem;"></i>
+                            </a>
+                        </li>
+                        <!--<li class="nav-item">
                             <a href="#">
-                                <i class="fas fa-home"></i>
+                                <i class="fas fa-video video"></i>
                             </a>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
-                            <a href="">
-                                <i class="fab fa-facebook-messenger"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="">
-                                <i class="far fa-compass"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="">
-                                <i class="far fa-heart"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                                <div class="action">
-                                    <div class="profile" onclick="menuToggle()">
-                                        <a href="profile">
-                                            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220609093221/g2-200x200.jpg" alt="user Avatar">
-                                        </a>
-                                    </div>
-                                </div>
-                                
-
+                            <div class="sta">
+                                <a href="{% url 'msg' %}">
+                                    <i class="fab fa-facebook-messenger msg"></i>
+                                </a>
+                                <div class="circle">7</div>
                             </div>
                         </li>
+                        <li class="nav-item">
+                            <div class="action">
+                                <div class="profile" onclick="menuToggle()">
+                                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220609093221/g2-200x200.jpg"
+                                        alt="user Avatar">
+                                </div>
+                            </div>
+                        </li>
+                        <!--<li class="nav-item">
+                            <a href="#">
+                                <i class="fas fa-heart heart"></i>
+                            </a>
+                        </li>-->
+                        <li class="nav-item">
+                            <div class="sta">
+                                <a href="{%  url 'notification' %}">
+                                    <i class="fas fa-bell bell"></i>
+                                </a>
+                                <div class="circle">2</div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="fas fa-gear gear"></i>
+                            </a>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>
@@ -73,41 +75,70 @@
         <div class="container">
             <div class="col-9">
                 <div class="statuses">
-                    <div class="status">
-                        <div class="image">
-                            <img src="{% static 'images/logo.png' %}"
-                                alt="img3">
+                    <div class="sta">
+                        <div class="status" style="background: none;">
+                            <div class="image">
+                                <img src="{% static 'images/a_p.jpg' %}"
+                                    alt="img3">
+                            </div>
+                        </div>
+                        <div class="circle" style="background: black; border: none;">
+                            <i class="fas fa-plus-circle" style="color: rgb(73, 255, 73);position:absolute;"></i>
                         </div>
                     </div>
-                    <div class="status">
-                        <div class="image">
-                            <img src="{% static 'images/shakti.png' %}"
+                    <div class="sta">
+                        <div class="status">
+                            <div class="image">
+                                <img src="{% static 'images/logo.png' %}"
+                                    alt="img3">
+                            </div>
+                        </div>
+                        <div class="circle" style="background: rgb(73, 255, 73);"></div>
+                    </div>
+                    <div class="sta">
+                        <div class="status">
+                            <div class="image">
+                                <img src="{% static 'images/shakti.png' %}"
                                 alt="img4">
+                            </div>
                         </div>
+                        <div class="circle" style="background: rgb(73, 255, 73);"></div>
                     </div>
-                    <div class="status">
-                        <div class="image">
-                            <img src="{% static 'images/pragyan.png' %}"
+                    <div class="sta">
+                        <div class="status">
+                            <div class="image">
+                                <img src="{% static 'images/pragyan.png' %}"
                                 alt="img5">
+                            </div>
                         </div>
+                        <div class="circle" style="background: rgb(73, 255, 73);"></div>
                     </div>
-                    <div class="status">
-                        <div class="image">
-                            <img src="{% static 'images/logo.png' %}"
+                    <div class="sta">
+                        <div class="status">
+                            <div class="image">
+                                <img src="{% static 'images/logo.png' %}"
                                 alt="img6">
+                            </div>
                         </div>
+                        <div class="circle" style="background: transparent; border: none;"></div>
                     </div>
-                    <div class="status">
-                        <div class="image">
-                            <img src="{% static 'images/susi.png' %}"
+                    <div class="sta">
+                        <div class="status">
+                            <div class="image">
+                                <img src="{% static 'images/susi.png' %}"
                                 alt="img7">
+                            </div>
                         </div>
+                        <div class="circle" style="background: transparent; border: none;"></div>
                     </div>
-                    <div class="status">
-                        <div class="image">
-                            <img src="{% static 'images/logo.png' %}"
+                    <div class="sta">
+                        <div class="status">
+                            <div class="image">
+                                <img src="{% static 'images/logo.png' %}"
                                 alt="img8">
+                            </div>
                         </div>
+                        <div class="circle" style="background: rgb(73, 255, 73);"></div>
                     </div>
                 </div>
 
@@ -116,11 +147,14 @@
                     <div class="top">
                         <div class="userDetails">
                             <div class="profilepic">
-                                <div class="profile_img">
-                                    <div class="image">
-                                        <img src="{% static 'images/shakti.png' %}"
-                                            alt="img8">
+                                <div class="sta">
+                                    <div class="profile_img">
+                                        <div class="image">
+                                            <img src="{% static 'images/shakti.png' %}"
+                                                alt="img8">
+                                        </div>
                                     </div>
+                                    <div class="circle" style="background: rgb(73, 255, 73);"></div>
                                 </div>
                             </div>
                             <h3>shaktibhusan_20
@@ -233,11 +267,14 @@
                     <div class="top">
                         <div class="userDetails">
                             <div class="profilepic">
-                                <div class="profile_img">
-                                    <div class="image">
-                                        <img src="{% static 'images/susi.png' %}"
-                                            alt="img9">
+                                <div class="sta">
+                                    <div class="profile_img">
+                                        <div class="image">
+                                            <img src="{% static 'images/susi.png' %}"
+                                                alt="img9">
+                                        </div>
                                     </div>
+                                    <div class="circle"></div>
                                 </div>
                             </div>
                             <h3>_Sushant___03<br>
@@ -348,10 +385,14 @@
                     <div class="top">
                         <div class="userDetails">
                             <div class="profilepic">
-                                <div class="profile_img">
-                                    <div class="image">
-                                        <img src="{% static 'images/satya.png' %}" alt="img10">
+                                <div class="sta">
+                                    <div class="profile_img">
+                                        <div class="image">
+                                            <img src="{% static 'images/satya.png' %}"
+                                                alt="img10">
+                                        </div>
                                     </div>
+                                    <div class="circle"></div>
                                 </div>
                             </div>
                             <h3>_sj_photographys<br>
@@ -459,13 +500,39 @@
                     <h4>Suggestions For You</h4>
                     <div class="top">
                         <div class="userDetails">
-                            <div class="profilepic">
-                                <div class="profile_img">
-                                    <div class="image">
-                                        <img src="{% static 'images/a_p.jpg' %}"
-                                            alt="img12">
+                            <div class="sta">
+                                <div class="profilepic">
+                                    <div class="profile_img">
+                                        <div class="image">
+                                            <img src="{% static 'images/redbull.jpg' %}"
+                                                alt="img12">
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="circle" style="background: rgb(73, 255, 73);"></div>
+                            </div>
+                            <h3>redbull
+                                <i class="fas fa-certificate" style="color: blue;font-size: 13px;"></i><br>
+                                <span>Followed by _Bikramaditya</span>
+                            </h3>
+                        </div>
+                        <div>
+                            <a href="#" class="follow">follow
+                            </a>
+                        </div>
+                    </div>
+                    <div class="top">
+                        <div class="userDetails">
+                            <div class="sta">
+                                <div class="profilepic">
+                                    <div class="profile_img">
+                                        <div class="image">
+                                            <img src="{% static 'images/a_p.jpg' %}"
+                                                alt="img12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="circle" style="background: rgb(73, 255, 73);"></div>
                             </div>
                             <h3>Arabinda_Pradhan_<br>
                                 <span>Follows You</span>
@@ -478,32 +545,38 @@
                     </div>
                     <div class="top">
                         <div class="userDetails">
-                            <div class="profilepic">
-                                <div class="profile_img">
-                                    <div class="image">
-                                        <img src="{% static 'images/susi.png' %}"
-                                            alt="img13">
+                            <div class="sta">
+                                <div class="profilepic">
+                                    <div class="profile_img">
+                                        <div class="image">
+                                            <img src="{% static 'images/susi.png' %}"
+                                                alt="img13">
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="circle" style="background: transparent; border: none;"></div>
                             </div>
                             <h3>_Sushant___03<br>
                                 <span>Follows You</span>
                             </h3>
                         </div>
                         <div>
-                            <a href="#" class="follow">follow
+                            <a href="#" class="follow">follow back
                             </a>
                         </div>
                     </div>
                     <div class="top">
                         <div class="userDetails">
-                            <div class="profilepic">
-                                <div class="profile_img">
-                                    <div class="image">
-                                        <img src="{% static 'images/logo.png' %}"
-                                            alt="img14">
+                            <div class="sta">
+                                <div class="profilepic">
+                                    <div class="profile_img">
+                                        <div class="image">
+                                            <img src="{% static 'images/logo.png' %}"
+                                                alt="img14">
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="circle" style="background: rgb(73, 255, 73);"></div>
                             </div>
                             <h3>_._raquel_.07<br>
                                 <span>Followed by suprava_3567</span>
@@ -515,13 +588,16 @@
                     </div>
                     <div class="top">
                         <div class="userDetails">
-                            <div class="profilepic">
-                                <div class="profile_img">
-                                    <div class="image">
-                                        <img src="{% static 'images/shakti.png' %}"
-                                            alt="img15">
+                            <div class="sta">
+                                <div class="profilepic">
+                                    <div class="profile_img">
+                                        <div class="image">
+                                            <img src="{% static 'images/shakti.png' %}"
+                                                alt="img15">
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="circle" style="background: rgb(73, 255, 73);"></div>
                             </div>
                             <h3>shaktibhusan_20<br>
                                 <span>Follows You</span>
@@ -534,13 +610,16 @@
                     </div>
                     <div class="top">
                         <div class="userDetails">
-                            <div class="profilepic">
-                                <div class="profile_img">
-                                    <div class="image">
-                                        <img src="{% static 'images/pragyan.png' %}"
-                                            alt="img16" class="cover">
+                            <div class="sta">
+                                <div class="profilepic">
+                                    <div class="profile_img">
+                                        <div class="image">
+                                            <img src="{% static 'images/pragyan.png' %}"
+                                                alt="img16" class="cover">
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="circle" style="background: rgb(73, 255, 73);"></div>
                             </div>
                             <h3>iampragnyaa<br>
                                 <span>Followed by __.a.n.j.u.m__</span>
@@ -557,13 +636,13 @@
                 <div class="footer">
                     <a class="footer-section" href="#">About</a>
                     <a class="footer-section" href="#">Help</a>
-                    <a class="footer-section" href="#">API</a>
-                    <a class="footer-section" href="#">Jobs</a>
-                    <a class="footer-section" href="#">Privacy</a>
+                    <!-- <a class="footer-section" href="#">API</a> -->
+                    <!-- <a class="footer-section" href="#">Jobs</a> -->
+                    <!-- <a class="footer-section" href="#">Privacy</a> -->
                     <a class="footer-section" href="#">Terms</a>
-                    <a class="footer-section" href="#">Locations</a>
-                    <br>
-                    <a class="footer-section" href="#">Top Accounts</a>
+                    <!-- <a class="footer-section" href="#">Locations</a> -->
+                    
+                    <!-- <a class="footer-section" href="#">Top Accounts</a> -->
                     <a class="footer-section" href="#">Hashtag</a>
                     <a class="footer-section" href="#">Language</a>
                     <br><br>

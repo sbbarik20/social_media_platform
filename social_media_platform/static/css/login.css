@@ -1,0 +1,125 @@
+body {
+    background-color: #94b3fb;
+    font-family:'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-image: url("../images/logo-bg.jpg");
+    background-repeat: no-repeat;
+    background-size:contain;
+}
+#myVideo {
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+  }
+  
+.container {
+    background-color: #ffffffc5;
+    padding: 30px;
+    border-radius: 3rem;
+    box-shadow: 0 5px 7px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 50%;
+    min-width: 20rem;
+    margin-right: 3rem;
+}
+
+.left-side {
+    width: 50%;
+    padding-right: 30px;
+    border-right: 1px solid #c1c1c1;
+    text-align: center;
+}
+
+.right-side {
+    width: 50%;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    width: 75%;
+    text-align: center;
+    margin-top: .5rem;
+    font-size: 15px;
+}
+
+.left-side button {
+    background-color: #ffc107; /* Yellow color */
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    width: 80%;
+    text-align: center;
+    margin-top: .5rem;
+    font-size: 15px;
+}
+
+.left-side button:hover {
+    background-color: #e0a800;
+}
+
+.social-buttons {
+    margin-top: 20px;
+}
+
+.social-buttons button {
+    background-color: transparent;
+    border: 1px solid #bcbcbc;
+    padding: 10px 15px;
+    border-radius: 3px;
+    margin: 0 5px;
+    color: #333;
+}
+
+.social-buttons button:hover {
+    background-color: #ffffff;
+    color: rgb(1, 162, 1);
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h3{
+    color: #a3a3a3;
+    font-style: italic;
+}
+.i {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+i{
+    color: #ffc107;
+}
+#see {
+    font-size: 1.2rem;
+    position: absolute;
+    margin: .5rem;
+    margin-top: 1.1rem;
+}
+/* .left-side a{
+    margin-left: 5rem;
+} */

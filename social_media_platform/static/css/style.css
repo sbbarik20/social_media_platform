@@ -7,76 +7,54 @@
 body {
     font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu,
         Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    background: #fafafa;
+    background: #b4b1f7;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .navbar {
-    position: fixed;
+    width: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
     z-index: 100000;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(255, 255, 255);
-    width: 100%;
+    background: rgb(240, 240, 240);
     border: 1px solid rgb(218, 217, 217);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    box-shadow: 1px 0px 5px 0px black;
 }
 
 .navbar .container {
-    /* background-color: #555; */
-    padding: 15px 0;
+    padding: .3rem;
     width: 75%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    /* margin: 0 auto; */
-}
-
-.searchbar {
-    width: 100%;
-    text-align: center;
-}
-
-.searchbar input {
-    width: 50%;
-    background-color: #fafafa;
-    padding: 7px;
-    text-indent: 21px;
-    outline: none;
-    border: 1px solid rgb(218, 217, 217);
-    border-radius: 1rem;
-    color: rgb(77, 77, 77);
-}
-
-.searchbar img {
-    position: absolute;
-    margin:.5rem;
-    margin-top: 0.4rem;
-}
-
-.searchbar input::placeholder {
-    font-weight: lighter;
-    color: rgb(172, 172, 172);
+    justify-content: center;
 }
 
 .nav-links {
     font-weight: lighter;
     color: rgb(172, 172, 172);
-    /* background: #333  ; */
 }
 
 .nav-group .nav-item {
     list-style-type: none;
     margin: 0 8px;
+    /* padding: .2rem .1rem .2rem .1rem; */
 }
 
 .nav-group .nav-item a {
-    font-size: 22px;
+    font-size: 20px;
     display: block;
-    color: black;
-}
-
-.nav-group .nav-item a:hover {
-    color: red;
+    color: rgb(67, 66, 66);
 }
 
 .nav-group {
@@ -84,19 +62,50 @@ body {
     align-items: center;
     justify-content: center;
 }
+.nav-item i{
+    padding: .5rem;
+    border-radius: .5rem;
+}
+/* .nav-item i:hover{
+    background-color: rgba(15, 17, 136, 0.457);
+    box-shadow: 2px 2px 5px 0px black;
+} */
+.video:hover{
+    color: rgb(255, 255, 255); 
+    filter: drop-shadow(0px 0px 7px black); 
+}
+.msg:hover{
+    color: rgb(255, 255, 255); 
+    filter: drop-shadow(0px 0px 5px blue); 
+}
+.heart:hover{
+    color: red;
+    filter: drop-shadow(0px 0px 5px red); 
+}
+.bell:hover{
+    color: yellow;
+    filter: drop-shadow(0px 0px 5px black); 
+}
+.gear:hover{
+    color: rgb(255, 255, 255);
+    filter: drop-shadow(0px 0px 5px black); 
+}
 
 .action .profile {
     position: relative;
-    width: 25px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 2px solid blue;
 }
-
+.action .profile:hover{
+    box-shadow: 0px 0px 10px 0px black;
+}
 .action .profile img {
     width: 100%;
     height: 100%;
@@ -111,24 +120,25 @@ main {
 }
 
 main .container {
+    background-color: #ffffff;
     position: relative;
-    margin-top: 60px;
-    width: 75%;
+    width: 85%;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    /* background: #ddd; */
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 2px 5px 10px 0px black;
 }
 
 .col-9 {
     width: 65%;
-    margin-top: 30px;
 }
 
 .statuses {
     margin-bottom: 30px;
     width: 100%;
-    background-color: #fff;
+    background-color: #eeeeee;
     display: flex;
     align-items: center;
     justify-content: start;
@@ -138,7 +148,40 @@ main .container {
     overflow: auto;
     border-radius: .5rem;
 }
-
+.sta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.circle{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    border: 1px solid rgb(112, 112, 112);
+    background: rgb(231, 231, 231);
+    margin-top: -1rem;
+    margin-left: 3.5rem;
+    z-index: 10000;
+}
+.userDetails .circle{
+    height: 10px;
+    width: 10px;
+    margin-top: -.6rem;
+    margin-left: .7rem;
+}
+.nav-item .circle{
+    height: 12px;
+    width: 12px;
+    margin-top: -1rem;
+    margin-left: 1rem;
+    z-index: 10000;
+    background: rgb(255, 79, 79);
+    border: none;
+    color: black;
+    font-size: 10px;
+    text-align: center;
+    font-weight: bold;
+}
 .statuses .status {
     display: inline-block;
     border-radius: 50%;
@@ -147,7 +190,7 @@ main .container {
     height: 70px;
     min-width: 70px;
     min-height: 70px;
-    background: linear-gradient(to right, red, orange);
+    background: linear-gradient(to right,rgb(242, 152, 73), rgb(47, 106, 255));
     padding: 2px;
     margin-left: 15px;
     cursor: pointer;
@@ -176,7 +219,7 @@ main .container {
     width: 33%;
     position: -webkit-sticky;
     position: sticky;
-    top: 90px;
+    top: 1rem;
 }
 
 .col-3 h4 {
@@ -201,13 +244,19 @@ main .container {
 .col-3 .card .top a {
     color: #1d92ff;
 }
+.col-3 .card .top a:hover {
+    color: white;
+    padding: .5rem;
+    background-color: #1d92ff;
+    border-radius: .5rem;
+}
 
 .col-3 .card .bottom {
     padding: 10px 20px;
 }
 
 .col-3 .card .top .userDetails {
-    width: 100%;
+    width: 70%;
     display: flex;
     align-items: center;
 }
@@ -270,7 +319,7 @@ main .container {
     overflow: hidden;
     width: 30px;
     height: 30px;
-    background: linear-gradient(to right, red, orange);
+    background: linear-gradient(to right,rgb(242, 152, 73), rgb(47, 106, 255));
     padding: 2px;
     margin-right: 8px;
     cursor: pointer;

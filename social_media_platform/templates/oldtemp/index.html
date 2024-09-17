@@ -1,0 +1,198 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://kit.fontawesome.com/d9c78b6614.js" crossorigin="anonymous"></script>
+    <title>Instagram Clone</title>
+</head>
+
+<body>
+
+    <!-- Our Header section Starts from here -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-links">
+                    <ul class="nav-group">
+                        <li class="nav-item">
+                            <a href="{% url 'index' %}">
+                                <i class="fas fa-home" style="background-color: rgb(21, 24, 204); color: white; padding: .5rem; border-radius: .5rem;"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="fas fa-video video"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="sta">
+                                <a href="{% url 'msg' %}">
+                                    <i class="fab fa-facebook-messenger msg"></i>
+                                </a>
+                                <div class="circle">7</div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="action">
+                                <div class="profile" onclick="menuToggle()">
+                                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220609093221/g2-200x200.jpg"
+                                        alt="user Avatar">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="fas fa-heart heart"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="sta">
+                                <a href="{% url 'notification' %}">
+                                    <i class="fas fa-bell bell"></i>
+                                </a>
+                                <div class="circle">2</div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">
+                                <i class="fas fa-gear gear"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <div class="container">
+            <div class="col-9">
+                <!-- Status section -->
+                <div class="statuses">
+                    <!-- Status items -->
+                    {% for status in statuses %}
+                    <div class="sta">
+                        <div class="status" style="background: {% if status.is_active %}none{% endif %};">
+                            <div class="image">
+                                <img src="{% static status.image_url %}" alt="{{ status.alt_text }}">
+                            </div>
+                        </div>
+                        <div class="circle" style="background: {% if status.is_active %}rgb(73, 255, 73){% else %}transparent{% endif %}; border: {% if not status.is_active %}none{% endif %};">
+                            {% if status.is_add_status %}
+                            <i class="fas fa-plus-circle" style="color: rgb(73, 255, 73);position:absolute;"></i>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Posts section -->
+                {% for post in posts %}
+                <div class="card">
+                    <!-- Post header -->
+                    <div class="top">
+                        <div class="userDetails">
+                            <div class="profilepic">
+                                <div class="sta">
+                                    <div class="profile_img">
+                                        <div class="image">
+                                            <img src="{% static post.user_image %}" alt="{{ post.user_name }}">
+                                        </div>
+                                    </div>
+                                    <div class="circle" style="background: {% if post.user_active %}rgb(73, 255, 73){% endif %};"></div>
+                                </div>
+                            </div>
+                            <h3>{{ post.user_name }}
+                                <br>
+                                <span>{{ post.location }}</span>
+                            </h3>
+                        </div>
+                        <div>
+                            <span class="dot">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- Post image -->
+                    <div class="imgBx">
+                        <img src="{% static post.image_url %}" alt="post-image" class="cover">
+                    </div>
+                    <!-- Post actions -->
+                    <div class="bottom">
+                        <!-- Action buttons -->
+                        <div class="actionBtns">
+                            <!-- ... (keep the SVG icons as they are) ... -->
+                        </div>
+                        <!-- Likes, comments, etc. -->
+                        <a href="#"><p class="likes">{{ post.likes }} likes</p></a>
+                        <a href="#"><p class="message"><b>{{ post.commenters|join:", " }}</b></p></a>
+                        <a href="#"><h4 class="comments">View all {{ post.comment_count }} comments</h4></a>
+                        <a href="#"><h5 class="postTime">{{ post.post_time }}</h5></a>
+                        <!-- Add comment section -->
+                        <div class="addComments">
+                            <div class="reaction">
+                                <h3><i class="far fa-smile"></i></h3>
+                            </div>
+                            <input type="text" class="text" placeholder="Add a comment...">
+                            <a href="#">Post</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <!-- Suggestions and footer -->
+            <div class="col-3">
+                <!-- Suggestions -->
+                <div class="card">
+                    <h4>Suggestions For You</h4>
+                    {% for suggestion in suggestions %}
+                    <div class="top">
+                        <div class="userDetails">
+                            <div class="sta">
+                                <div class="profilepic">
+                                    <div class="profile_img">
+                                        <div class="image">
+                                            <img src="{% static suggestion.image_url %}" alt="{{ suggestion.name }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="circle" style="background: {% if suggestion.is_active %}rgb(73, 255, 73){% endif %};"></div>
+                            </div>
+                            <h3>{{ suggestion.name }}
+                                {% if suggestion.is_verified %}
+                                <i class="fas fa-certificate" style="color: blue;font-size: 13px;"></i>
+                                {% endif %}
+                                <br>
+                                <span>{{ suggestion.connection }}</span>
+                            </h3>
+                        </div>
+                        <div>
+                            <a href="#" class="follow">{{ suggestion.action }}</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Footer -->
+                <div class="footer">
+                    {% for link in footer_links %}
+                    <a class="footer-section" href="{{ link.url }}">{{ link.text }}</a>
+                    {% endfor %}
+                    <br><br>
+                    <span class="footer-section">
+                        &copy; 2023 INSTAGRAM FROM FACEBOOK
+                    </span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

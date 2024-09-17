@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    # 'social_django',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'social_media_platform.urls'
@@ -127,3 +129,33 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# AUTHENTICATION_BACKENDS = (
+#     'social_core.backends.google.GoogleOAuth2',
+#     'social_core.backends.facebook.FacebookOAuth2',
+#     'social_core.backends.twitter.TwitterOAuth',
+#     'django.contrib.auth.backends.ModelBackend',  # This is necessary for default login
+# )
+
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'your-google-client-id'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'your-google-client-secret'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = ['email', 'profile']
+
+
+# SOCIAL_AUTH_FACEBOOK_KEY = 'your-facebook-app-id'
+# SOCIAL_AUTH_FACEBOOK_SECRET = 'your-facebook-app-secret'
+
+# SOCIAL_AUTH_TWITTER_KEY = 'your-twitter-api-key'
+# SOCIAL_AUTH_TWITTER_SECRET = 'your-twitter-api-secret'
+
+# LOGIN_REDIRECT_URL = 'index'  # After login, redirect to index
+# LOGOUT_REDIRECT_URL = 'login'  # After logout, redirect to login
+
+# # URL where users will be redirected if they encounter an authentication error
+# SOCIAL_AUTH_LOGIN_ERROR_URL = 'login'
+
+
+
+# # Tell Django to use the custom User model
+# # AUTH_USER_MODEL = 'users.User'

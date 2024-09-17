@@ -1,0 +1,242 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/msg.css' %}">
+    <script src="https://kit.fontawesome.com/d9c78b6614.js" crossorigin="anonymous"></script>
+    <title>Instagram Clone</title>
+</head>
+
+<body>
+
+    <!-- Our Header section Starts from here -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-links">
+                    <ul class="nav-group">
+                        <li class="nav-item">
+                            <a href="{% url 'index' %}">
+                                <i class="fas fa-home bell"></i>
+                            </a>
+                        </li>
+                        <!--
+                        <li class="nav-item">
+                            <a href="">
+                                <i class="fas fa-video video"></i>
+                            </a>
+                        </li>
+                        -->
+                        <li class="nav-item">
+                            <div class="sta">
+                                <a href="">
+                                    <i class="fab fa-facebook-messenger msg" style="background-color: rgb(21, 24, 204); color: white; padding: .5rem; border-radius: .5rem;"></i>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <div class="action">
+                                <div class="profile" onclick="menuToggle()">
+                                    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220609093221/g2-200x200.jpg"
+                                        alt="user Avatar">
+                                </div>
+                            </div>
+                        </li>
+                        <!--
+                        <li class="nav-item">
+                            <a href="">
+                                <i class="fas fa-heart heart"></i>
+                            </a>
+                        </li>
+                        -->
+                        <li class="nav-item">
+                            <div class="sta">
+                                <a href="{% url 'notification' %}">
+                                    <i class="fas fa-bell bell"></i>
+                                </a>
+                                <div class="circle">2</div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a href="">
+                                <i class="fas fa-gear gear"></i>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Code for Showing the Status -->
+    <main style="height: 80vh;">
+        <div class="container">
+            <div class="sidebar">
+                <i class="far fa-message msg" style="letter-spacing: .3rem;"> Chats</i>
+                <div class="suggestion-item">
+                    <div>
+                        <img src="https://via.placeholder.com/40" alt="Profile Icon">
+                        <p>John Doe</p>
+                    </div>
+                    <p>last online <br>7:40 PM</p>
+                </div>
+                <div class="suggestion-item">
+                    <div>
+                        <img src="https://via.placeholder.com/40" alt="Profile Icon">
+                        <p>Jane Smith</p>
+                    </div>
+                    <p>last online <br>7:40 PM</p>
+                </div>
+                <div class="suggestion-item">
+                    <div>
+                        <img src="https://via.placeholder.com/40" alt="Profile Icon">
+                        <p>Robert Brown</p>
+                    </div>
+                    <p>last online <br>7:40 PM</p>
+                </div>
+                <div class="suggestion-item">
+                    <div>
+                        <img src="https://via.placeholder.com/40" alt="Profile Icon">
+                        <p>Emily Johnson</p>
+                    </div>
+                    <p>last online <br>7:40 PM</p>
+                </div>
+                <div class="suggestion-item">
+                    <div>
+                        <img src="https://via.placeholder.com/40" alt="Profile Icon">
+                        <p>Michael Lee</p>
+                    </div>
+                    <p>last online <br>7:40 PM</p>
+                </div>
+                <div class="suggestion-item">
+                    <div>
+                        <img src="https://via.placeholder.com/40" alt="Profile Icon">
+                        <p>Michael Lee</p>
+                    </div>
+                    <p>last online <br>7:40 PM</p>
+                </div>
+                <div class="suggestion-item">
+                    <div>
+                        <img src="https://via.placeholder.com/40" alt="Profile Icon">
+                        <p>Michael Lee</p>
+                    </div>
+                    <p>last online <br>7:40 PM</p>
+                </div>
+                <div class="suggestion-item">
+                    <div>
+                        <img src="https://via.placeholder.com/40" alt="Profile Icon">
+                        <p>Michael Lee</p>
+                    </div>
+                    <p>last online <br>7:40 PM</p>
+                </div>
+            </div>
+            <div class="chat-box">
+                <!-- Header -->
+                <div class="chat-header">
+                    Direct Messages
+                </div>
+    
+                <!-- Chat Messages -->
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Received message -->
+                    
+                    <div class="message received">
+                    </div>
+                    <div class="message received">
+                    </div>
+                    <div class="message received">
+                    </div>
+                    <div class="message received">
+                    </div>
+                    <div class="message received">
+                    </div>
+                    <div class="message received">
+                    </div>
+                    <div class="message received">
+                    </div>
+                    <div class="message received">
+                    </div>
+                    <div class="message received">
+                    </div>
+                    <div class="message received">
+                    </div>
+                    <div class="message received">
+                    </div>
+                    <div class="message received">
+                    </div>
+                    <div class="message received">
+                    </div>
+                    <div class="message received">
+                    </div>
+                    
+    
+                    <div class="message received">
+                        <div class="message-content">
+                            Hey! How are you?
+                            <div class="message-time">10:30 AM</div>
+                        </div>
+                    </div>
+                    <!-- Sent message -->
+                    <div class="message sent">
+                        <div class="message-content">
+                            I'm good, thanks! How about you?
+                            <div class="message-time">10:32 AM</div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Footer (Input & Send) -->
+                <div class="chat-footer">
+                    <input type="text" placeholder="Type your message..." id="chat-input">
+                    <button id="send-btn">&#9658;</button>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            const sendBtn = document.getElementById('send-btn');
+            const chatInput = document.getElementById('chat-input');
+            const chatMessages = document.getElementById('chat-messages');
+    
+            sendBtn.addEventListener('click', () => {
+                const messageText = chatInput.value.trim();
+    
+                if (messageText) {
+                    // Create a new message element
+                    const messageElement = document.createElement('div');
+                    messageElement.classList.add('message', 'sent');
+    
+                    messageElement.innerHTML = `
+                        <div class="message-content">
+                            ${messageText}
+                            <div class="message-time">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
+                        </div>
+                    `;
+    
+                    // Append the message to the chat-messages
+                    chatMessages.appendChild(messageElement);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+    
+                    // Clear the input field
+                    chatInput.value = '';
+                }
+            });
+    
+            // Press Enter to send message
+            chatInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    sendBtn.click();
+                }
+            });
+        </script>
+    </main>
+
+</body>
+
+</html>
